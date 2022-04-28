@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSourcing.Hospital.App", "EventSourcing.Hospital.App\EventSourcing.Hospital.App.csproj", "{86BE4A32-02B9-49E5-9B24-1F9EF7BBD787}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSourcing.Hospital.Storage", "EventSourcing.Hospital.Storage\EventSourcing.Hospital.Storage.csproj", "{39E83929-AB91-403C-8E7B-526779AD1FC9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSourcing.Hospital.Domain", "EventSourcing.Hospital.Domain\EventSourcing.Hospital.Domain.csproj", "{C4BBDD38-D030-4E97-B76C-C4626FA7F1D7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSourcing.Hospital.App.ReadPatient", "EventSourcing.Hospital.App.ReadPatient\EventSourcing.Hospital.App.ReadPatient.csproj", "{D7179355-D6B9-421F-BB3A-040D95D5C11A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSourcing.Hospital.App.Subscriptions", "EventSourcing.Hospital.App.Subscriptions\EventSourcing.Hospital.App.Subscriptions.csproj", "{977F8EA8-078F-4DF8-BCD6-ED4691AB747D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86BE4A32-02B9-49E5-9B24-1F9EF7BBD787}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86BE4A32-02B9-49E5-9B24-1F9EF7BBD787}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86BE4A32-02B9-49E5-9B24-1F9EF7BBD787}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86BE4A32-02B9-49E5-9B24-1F9EF7BBD787}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39E83929-AB91-403C-8E7B-526779AD1FC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39E83929-AB91-403C-8E7B-526779AD1FC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39E83929-AB91-403C-8E7B-526779AD1FC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39E83929-AB91-403C-8E7B-526779AD1FC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4BBDD38-D030-4E97-B76C-C4626FA7F1D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4BBDD38-D030-4E97-B76C-C4626FA7F1D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4BBDD38-D030-4E97-B76C-C4626FA7F1D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4BBDD38-D030-4E97-B76C-C4626FA7F1D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7179355-D6B9-421F-BB3A-040D95D5C11A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7179355-D6B9-421F-BB3A-040D95D5C11A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7179355-D6B9-421F-BB3A-040D95D5C11A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7179355-D6B9-421F-BB3A-040D95D5C11A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{977F8EA8-078F-4DF8-BCD6-ED4691AB747D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{977F8EA8-078F-4DF8-BCD6-ED4691AB747D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{977F8EA8-078F-4DF8-BCD6-ED4691AB747D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{977F8EA8-078F-4DF8-BCD6-ED4691AB747D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9CEB6E90-784D-41D1-91CA-967CB64CE861}
+	EndGlobalSection
+EndGlobal
