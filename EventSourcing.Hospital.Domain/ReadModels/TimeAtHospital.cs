@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using LunchAndLearn.EventSourcing.Domain.Events;
+using EventSourcing.Hospital.Domain.Events;
 
-namespace LunchAndLearn.EventSourcing.Domain.ReadModels
+namespace EventSourcing.Hospital.Domain.ReadModels
 {
     public class TimeAtHospital
     {

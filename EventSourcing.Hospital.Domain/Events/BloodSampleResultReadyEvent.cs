@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LunchAndLearn.EventSourcing.Domain.Events
+namespace EventSourcing.Hospital.Domain.Events
 {
     public class BloodSampleResultReadyEvent
     {

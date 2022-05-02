@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
-using LunchAndLearn.EventSourcing.Domain.Events;
-using LunchAndLearn.EventSourcing.Storage;
+using EventSourcing.Hospital.Domain.Events;
+using EventSourcing.Hospital.Storage;
 
-namespace LunchAndLearn.EventSourcing.App
+namespace EventSourcing.Hospital.App
 {
     class Program
     {
@@ -63,7 +63,6 @@ namespace LunchAndLearn.EventSourcing.App
 
             await Store.AppendEvent($"patient-{patient}", events);
         }
-
 
         private static async Task SeedFullVisit(string patient)
         {

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using EventSourcing.Hospital.Domain;
+using EventSourcing.Hospital.Domain.ReadModels;
+using EventSourcing.Hospital.Storage;
 using EventStore.Client;
-using LunchAndLearn.EventSourcing.Domain;
-using LunchAndLearn.EventSourcing.Domain.ReadModels;
-using LunchAndLearn.EventSourcing.Storage;
 
-namespace LunchAndLearn.EventSourcing.App.Subscriptions
+namespace EventSourcing.Hospital.App.Subscriptions
 {
     class Program
     {

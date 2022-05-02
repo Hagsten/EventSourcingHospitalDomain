@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using EventStore.Client;
 using Newtonsoft.Json;
 
-namespace LunchAndLearn.EventSourcing.Storage
+namespace EventSourcing.Hospital.Storage
 {
     public class Store
     {
@@ -35,9 +35,71 @@ namespace LunchAndLearn.EventSourcing.Storage
             
         }
 
+        public async Task Snapshot(string stream, ISnapshotEvent snapshot)
+        {
+            var state = await _client.ReadStreamAsync(
+                Direction.Backwards,
+                $"{stream}",
+                StreamPosition.End,
+                1).ToListAsync();
+
+            if (state.Count == 0)
+            {
+                Console.WriteLine("No need for a snapshot yet...");
+                return;
+            }
+
+            var pos = state.Single().Event.EventNumber.ToUInt64();
+
+            var eventData = new EventData(
+                Uuid.NewUuid(),
+                snapshot.GetType().Name,
+                Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(snapshot)),
+                Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(new SnapshotMetaData(pos))));
+
+            await _client.AppendToStreamAsync(
+                $"{stream}-snapshot",
+                StreamState.Any,
+                new[] { eventData });
+        }
+
         public async Task<IReadOnlyCollection<ResolvedEvent>> ReadFromStream(string stream)
         {
-            var state = _client.ReadStreamAsync(Direction.Forwards, stream, StreamPosition.Start, resolveLinkTos:true);
+            var response = new List<ResolvedEvent>();
+
+            var snapshots = await GetSnapshotStream(stream);
+
+            var position = StreamPosition.Start;
+
+            if (snapshots.Count > 0)
+            {
+                Console.WriteLine($"Using snapshot for stream {stream}");
+                var meta = JsonConvert.DeserializeObject<SnapshotMetaData>(Encoding.UTF8.GetString(snapshots.Last().Event.Metadata.Span));
+                position = new StreamPosition(meta.Position + 1);
+                response.Add(snapshots.Last());
+            }
+
+            var state = _client.ReadStreamAsync(Direction.Forwards, stream, position, resolveLinkTos: true);
+
+            if (await state.ReadState == ReadState.StreamNotFound)
+            {
+                return new List<ResolvedEvent>();
+            }
+
+            response.AddRange(await state.ToListAsync());
+
+            return response;
+        }
+
+        private async Task<IReadOnlyCollection<ResolvedEvent>> GetSnapshotStream(string stream)
+        {
+            var streamName = $"{stream}-snapshot";
+
+            var state = _client.ReadStreamAsync(
+                Direction.Backwards,
+                streamName,
+                StreamPosition.End,
+                1);
 
             var readState = await state.ReadState;
 
@@ -48,5 +110,15 @@ namespace LunchAndLearn.EventSourcing.Storage
 
             return await state.ToListAsync();
         }
+    }
+
+    public class SnapshotMetaData
+    {
+        public SnapshotMetaData(ulong position)
+        {
+            Position = position;
+        }
+
+        public ulong Position { get; }
     }
 }

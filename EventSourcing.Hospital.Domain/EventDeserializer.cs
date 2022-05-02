@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Text;
-using LunchAndLearn.EventSourcing.Domain.Events;
+using EventSourcing.Hospital.Domain.Events;
 using Newtonsoft.Json;
 
-namespace LunchAndLearn.EventSourcing.Domain
+namespace EventSourcing.Hospital.Domain
 {
     public static class EventDeserializer
     {

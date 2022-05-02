@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using LunchAndLearn.EventSourcing.Domain;
-using LunchAndLearn.EventSourcing.Domain.Entities;
-using LunchAndLearn.EventSourcing.Domain.ReadModels;
-using LunchAndLearn.EventSourcing.Storage;
+using EventSourcing.Hospital.Domain;
+using EventSourcing.Hospital.Domain.Entities;
+using EventSourcing.Hospital.Domain.ReadModels;
+using EventSourcing.Hospital.Storage;
 
-namespace LunchAndLearn.EventSourcing.App.ReadPatient
+namespace EventSourcing.Hospital.App.ReadPatient
 {
     class Program
     {

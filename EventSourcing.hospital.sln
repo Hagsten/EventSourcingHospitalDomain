@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30804.86
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSourcing.Hospital.App", "EventSourcing.Hospital.App\EventSourcing.Hospital.App.csproj", "{86BE4A32-02B9-49E5-9B24-1F9EF7BBD787}"
 EndProject
@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSourcing.Hospital.Doma
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSourcing.Hospital.App.ReadPatient", "EventSourcing.Hospital.App.ReadPatient\EventSourcing.Hospital.App.ReadPatient.csproj", "{D7179355-D6B9-421F-BB3A-040D95D5C11A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSourcing.Hospital.App.Subscriptions", "EventSourcing.Hospital.App.Subscriptions\EventSourcing.Hospital.App.Subscriptions.csproj", "{977F8EA8-078F-4DF8-BCD6-ED4691AB747D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSourcing.Hospital.App.Subscriptions", "EventSourcing.Hospital.App.Subscriptions\EventSourcing.Hospital.App.Subscriptions.csproj", "{977F8EA8-078F-4DF8-BCD6-ED4691AB747D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSourcing.Hospital.App.Snapshots", "EventSourcing.Hospital.App.Snapshots\EventSourcing.Hospital.App.Snapshots.csproj", "{72429F7D-2900-45C7-92D6-773BBFBE75D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{977F8EA8-078F-4DF8-BCD6-ED4691AB747D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{977F8EA8-078F-4DF8-BCD6-ED4691AB747D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{977F8EA8-078F-4DF8-BCD6-ED4691AB747D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72429F7D-2900-45C7-92D6-773BBFBE75D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72429F7D-2900-45C7-92D6-773BBFBE75D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72429F7D-2900-45C7-92D6-773BBFBE75D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72429F7D-2900-45C7-92D6-773BBFBE75D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

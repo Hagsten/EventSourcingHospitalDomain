@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using EventStore.Client;
 
-namespace LunchAndLearn.EventSourcing.Storage
+namespace EventSourcing.Hospital.Storage
 {
     public class Subscription
     {
