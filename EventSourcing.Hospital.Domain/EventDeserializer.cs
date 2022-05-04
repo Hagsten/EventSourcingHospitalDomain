@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using EventSourcing.Hospital.Domain.Events;
+using EventSourcing.Hospital.Domain.Events.Snapshots;
 using Newtonsoft.Json;
 
 namespace EventSourcing.Hospital.Domain
@@ -21,7 +22,7 @@ namespace EventSourcing.Hospital.Domain
                 nameof(ExaminationEndedEvent) => JsonConvert.DeserializeObject<ExaminationEndedEvent>(Encoding.UTF8.GetString(e)),
                 nameof(HospitalEntryCreatedEvent) => JsonConvert.DeserializeObject<HospitalEntryCreatedEvent>(Encoding.UTF8.GetString(e)),
                 nameof(PatientDepartedEvent) => JsonConvert.DeserializeObject<PatientDepartedEvent>(Encoding.UTF8.GetString(e)),
-
+                nameof(TotalVisitsSnapshotEvent) => JsonConvert.DeserializeObject<TotalVisitsSnapshotEvent>(Encoding.UTF8.GetString(e)),
                 _ =>  throw new NotImplementedException()
             };
         }

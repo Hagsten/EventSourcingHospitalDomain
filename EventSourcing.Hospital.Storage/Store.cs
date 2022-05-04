@@ -110,6 +110,8 @@ namespace EventSourcing.Hospital.Storage
 
             return await state.ToListAsync();
         }
+
+        public async Task<IReadOnlyCollection<ResolvedEvent>> ReadSnapshotStream(string stream) => await GetSnapshotStream(stream);
     }
 
     public class SnapshotMetaData

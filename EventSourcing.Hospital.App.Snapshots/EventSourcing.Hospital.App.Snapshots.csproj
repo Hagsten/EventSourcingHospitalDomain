@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EventSourcing.Hospital.Domain\EventSourcing.Hospital.Domain.csproj" />
     <ProjectReference Include="..\EventSourcing.Hospital.Storage\EventSourcing.Hospital.Storage.csproj" />
   </ItemGroup>
 
