@@ -11,6 +11,7 @@ namespace EventSourcing.Hospital.App.Subscriptions
     class Program
     {
         private static readonly OccupiedExaminationRooms Model = OccupiedExaminationRooms.Replay(new List<object>());
+        private static readonly PatientsWithHighBloodPressure HighBloodPressureModel = PatientsWithHighBloodPressure.Replay(new List<object>());
 
         static void Main(string[] args)
         {
@@ -31,6 +32,7 @@ namespace EventSourcing.Hospital.App.Subscriptions
             var evt = EventDeserializer.Deserialize(e.Event.Data.Span.ToArray(), e.Event.EventType);
 
             UpdateOccupiedExaminationRoomsModel(evt);
+            //UpdateBloodPressureModel(evt);
 
             return Task.CompletedTask;
         }
@@ -45,6 +47,14 @@ namespace EventSourcing.Hospital.App.Subscriptions
             {
                 Console.WriteLine($"Occupied examination rooms: {Model.Rooms.Count}");
             }
+        }
+
+        private static void UpdateBloodPressureModel(object evt)
+        {
+            HighBloodPressureModel.UpdateWith(evt);
+
+            Console.WriteLine($"Patients with high bloodpressure: {HighBloodPressureModel.Count} ({HighBloodPressureModel.PercentageOfTotal}%)");
+
         }
     }
 }

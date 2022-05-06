@@ -26,8 +26,6 @@ namespace EventSourcing.Hospital.App.Snapshots
         {
             StartSubscriptions().GetAwaiter().GetResult();
 
-            //SeedManyAndSnapshot(52384, 1500).GetAwaiter().GetResult();
-
             Console.WriteLine("TotalVisits subscription started, press [Enter] to see its progress or type 'snapshot' to snap!");
 
             var cmd = Console.ReadLine();
@@ -46,6 +44,10 @@ namespace EventSourcing.Hospital.App.Snapshots
                     {
                         Snapshot(Model).GetAwaiter().GetResult();
                     }
+                }
+                else if(cmd == "seed")
+                {
+                    SeedManyAndSnapshot(0, 100000).GetAwaiter().GetResult();
                 }
 
                 cmd = Console.ReadLine();

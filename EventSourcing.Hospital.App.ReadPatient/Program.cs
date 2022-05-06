@@ -57,7 +57,7 @@ namespace EventSourcing.Hospital.App.ReadPatient
             
             Console.ReadLine();
 
-            Console.WriteLine($"Time spent in hospital is {TimeAtHospital.Replay(deserialized).Value.ToString()}");            
+            Console.WriteLine($"Time spent in hospital is {TimeAtHospital.Replay(deserialized).Value.ToString()}");
             
         }
         
